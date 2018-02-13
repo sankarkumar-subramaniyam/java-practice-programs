@@ -1,13 +1,20 @@
 /**
  * 
  */
-package algorithm;
+package algorithm.tutorials;
 
 /**
  * @author Sankar
  *
+ *
+ * FIFO
+ * 
+ * add/put
+ * 
+ * get/remove
+ *
  */
-public class FindLoopInlinkedList {
+public class QueueUsingStack {
 
 	/**
 	 * @param args

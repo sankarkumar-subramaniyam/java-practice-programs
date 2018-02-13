@@ -1,13 +1,17 @@
 /**
  * 
  */
-package algorithm;
+package algorithm.tree;
 
 /**
  * @author Sankar
  *
  */
-public class QueueUsingStack {
+public class BalancedTree {
+	
+	class Node<T>{
+		
+	}
 
 	/**
 	 * @param args
