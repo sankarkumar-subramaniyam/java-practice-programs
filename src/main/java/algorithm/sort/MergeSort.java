@@ -3,6 +3,8 @@
  */
 package algorithm.sort;
 
+import java.util.Arrays;
+
 /**
  * @author Sankar
  *
@@ -13,23 +15,28 @@ public class MergeSort {
 
 	private void doMergeSort(int lowerIndex, int higherIndex) {
 		if (lowerIndex < higherIndex) {
+			// FInd the middle
 			int middleIndex = lowerIndex + (higherIndex - lowerIndex) / 2;
 
+			// Split left of given subarray (lower,higher)
 			doMergeSort(lowerIndex, middleIndex);
+			
+			// Split right of given subarray (lower,higher)
 			doMergeSort(middleIndex + 1, higherIndex);
-
+			
+			// Compare and swap values between above two subarrays
 			mergeParts(lowerIndex, middleIndex, higherIndex);
 		}
 	}
 
 	private void mergeParts(int lowerIndex, int middleIndex, int higherIndex) {
-		System.out.println("mergeParts :== " + lowerIndex + "-" + middleIndex + "-" + higherIndex);
+//		System.out.println("mergeParts :== " + lowerIndex + "-" + middleIndex + "-" + higherIndex);
 		for (int i = lowerIndex; i <= higherIndex; i++) {
 			temp[i] = arr[i];
-			System.out.print(temp[i] + " ");
+//			System.out.print(temp[i] + " - ");
 		}
-		System.out.println();
-
+//		System.out.println();
+		
 		int i = lowerIndex;
 		int j = middleIndex + 1;
 		int k = lowerIndex;

@@ -29,6 +29,8 @@ public class Bitwise {
 		System.out.println("\n\n");
 		
 		System.out.println("------- 16 >> ---------"+Integer.toBinaryString(16));
+		System.out.println((3>>1)+" ; Binary Value := "+Integer.toBinaryString(3>>1));// "01000 : "
+		System.out.println((100<<1)+" ; Binary Value := "+Integer.toBinaryString(100>>1));// "01000 : "
 		System.out.println((16>>0)+" ; Binary Value := "+Integer.toBinaryString(16>>0));// "10000 : "
 		System.out.println((16>>1)+" ; Binary Value := "+Integer.toBinaryString(16>>1));// "01000 : "
 		System.out.println((16>>2)+" ; Binary Value := "+Integer.toBinaryString(16>>2));// "00100 : "

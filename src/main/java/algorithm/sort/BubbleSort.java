@@ -8,12 +8,16 @@ package algorithm.sort;
  *
  */
 public class BubbleSort {
-	public static void main(String args[]) {
-		int arr[] = { 2, 7, 5, 6, 8, 1 };
-		int length = arr.length;
 
+	int arr[] = { 2, 7, 5, 6, 8, 1 };
+	int length = arr.length;
+
+	/**
+	 * 
+	 */
+	private void sort() {
+		
 		for (int i = 0; i < (length - 1); i++) {
-
 			for (int j = 0; j < (length - i - 1); j++) {
 				// Swap
 				if (arr[j] > arr[j + 1]) {
@@ -21,16 +25,22 @@ public class BubbleSort {
 					arr[j] = arr[j + 1];
 					arr[j + 1] = temp;
 				}
-
+				/*
 				System.out.println("\nUN Sorted Array:");
 				for (int v : arr) {
 					System.out.print(v + " ");
-				}
+				}*/
 			}
 		}
+	}
+
+	public static void main(String args[]) {
+
+		BubbleSort bubbleSort = new BubbleSort();
+		bubbleSort.sort();
 
 		System.out.println("Sorted Array:");
-		for (int v : arr) {
+		for (int v : bubbleSort.arr) {
 			System.out.print(v + " ");
 		}
 	}

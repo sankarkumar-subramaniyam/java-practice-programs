@@ -22,6 +22,7 @@ public class QuickSort {
 		}
 		System.out.println("\n---------------");
 
+		//=================================================================
 		int i = lowerindex;
 		int j = higherindex;
 		int pivot = arr[lowerindex + (higherindex - lowerindex) / 2];

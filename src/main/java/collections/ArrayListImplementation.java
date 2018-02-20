@@ -8,6 +8,7 @@ import static collections.PrintAllCollections.print;
 
 public class ArrayListImplementation {
 
+	 
 	public static void main(String[] args) {
 
 		// Type - 1 :
@@ -38,18 +39,22 @@ public class ArrayListImplementation {
 		print("toArray ",arrayList.toArray());
 		print("toArray(a) ",arrayList.toArray(new Integer[5]));
 		print("indexOf ",arrayList.indexOf(2));
-//		print("Index 1",arrayList.trimToSize());
 		print("remove ",arrayList.remove(1));
 		print("retainAll ",arrayList.retainAll(arrayList2));
 		print("removeAll ",arrayList2.removeAll(arrayList));
+		print("findFirst ",arrayList.stream().findFirst());
+//		print("Index 1",arrayList.trimToSize());
 //		print("Index 1",arrayList.clear());
 //		print("Index 1",arrayList.ensureCapacity(4));
-		print("findFirst ",arrayList.stream().findFirst());
 
 		print("Check ArrayList Impl : arrayList ", arrayList);
 		print("Check ArrayList Impl : arrayList2 ", arrayList2);
 		print("Check ArrayList Impl : arrayList3 ", arrayList3);
 		print("Check ArrayList Impl : arrayList4 ", arrayList4);
+		
+		
+		
+		
 	}
 
 }
