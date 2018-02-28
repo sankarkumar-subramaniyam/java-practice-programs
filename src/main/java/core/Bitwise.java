@@ -3,6 +3,9 @@
  */
 package core;
 
+import java.lang.reflect.Array;
+import java.util.Objects;
+
 /**
  * @author Sankar
  *
@@ -28,8 +31,16 @@ public class Bitwise {
 		System.out.println("Hex := "+Integer.toString(100,16)); //prints 64 --Hex representation
 		System.out.println("\n\n");
 		
+		System.out.println("4+1 % 3 := "+((4+1) % 3));
+		
+		String[] newInstance = (String[]) Array.newInstance(String.class, 10);
+		System.out.println("newInstance := "+newInstance.length+" ; [4] := "+newInstance[4]);
+		
+		System.out.println((10>>1)+" ; Binary Value := "+Integer.toBinaryString(3>>1));// "01000 : "
+		System.out.println((Objects.hash("Binary-o") & 16)+" ; Binary Value := "+Integer.toBinaryString(3>>1));// "01000 : "
+		System.out.println((10^2)+" ; Binary Value := "+Integer.toBinaryString(3>>1));// "01000 : "
+		
 		System.out.println("------- 16 >> ---------"+Integer.toBinaryString(16));
-		System.out.println((3>>1)+" ; Binary Value := "+Integer.toBinaryString(3>>1));// "01000 : "
 		System.out.println((100<<1)+" ; Binary Value := "+Integer.toBinaryString(100>>1));// "01000 : "
 		System.out.println((16>>0)+" ; Binary Value := "+Integer.toBinaryString(16>>0));// "10000 : "
 		System.out.println((16>>1)+" ; Binary Value := "+Integer.toBinaryString(16>>1));// "01000 : "

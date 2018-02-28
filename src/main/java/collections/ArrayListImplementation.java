@@ -1,5 +1,6 @@
 package collections;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -30,7 +31,12 @@ public class ArrayListImplementation {
 		Integer[] integerArray = { 5, 6, 7 };
 		ArrayList<Integer> arrayList4 = new ArrayList<Integer>(Arrays.asList(integerArray));
 		arrayList4.addAll(arrayList3);
-
+		
+		
+		// Type - 5 :
+		String[] stringArray = (String[]) Array.newInstance(String.class, 10);
+		ArrayList<String> arrayList5 = new ArrayList<String>(Arrays.asList(stringArray));
+		
 		print("Index 1",arrayList.get(1));
 		print("size ",arrayList.size());
 		print("isEmpty ",arrayList.isEmpty());
@@ -51,6 +57,7 @@ public class ArrayListImplementation {
 		print("Check ArrayList Impl : arrayList2 ", arrayList2);
 		print("Check ArrayList Impl : arrayList3 ", arrayList3);
 		print("Check ArrayList Impl : arrayList4 ", arrayList4);
+		print("Check ArrayList Impl : arrayList5 ", arrayList5);
 		
 		
 		

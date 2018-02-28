@@ -3,18 +3,24 @@
  */
 package algorithm;
 
-
 /**
  * @author Sankar
  *
  */
 public class Node<T> {
-	
+
 	T value;
 	Node<T> leftNode;
 	Node<T> rightNode;
 	Node<T> parentNode;
-	
+
+	public Node(T value, Node<T> leftNode, Node<T> rightNode, Node<T> parentNode) {
+		this.value = value;
+		this.leftNode = leftNode;
+		this.rightNode = rightNode;
+		this.parentNode = parentNode;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -64,6 +70,4 @@ public class Node<T> {
 				+ parentNode + "]";
 	}
 
-	
-	
 }
