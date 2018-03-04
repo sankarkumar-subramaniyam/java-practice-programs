@@ -7,9 +7,9 @@ import java.util.*;
 
 //This class represents a directed graph using adjacency list
 //representation
-public class GraphBFSHashMap {
+public class GraphBFSHashMap<T> {
 	private int V; // No. of vertices
-	private HashMap<String, LinkedList<String>> adj = new HashMap<>(); // Adjacency Lists
+	private HashMap<T, LinkedList<T>> adj = new HashMap<>(); // Adjacency Lists
 
 	// Constructor
 	public GraphBFSHashMap(int v) {
@@ -20,27 +20,27 @@ public class GraphBFSHashMap {
 	}
 
 	// Function to add an edge into the graph
-	public void addEdge(String v, String w) {
+	public void addEdge(T v, T w) {
 		// adj[v].add(w);
 		if (adj.containsKey(v)) {
-			LinkedList<String> list = adj.get(v);
+			LinkedList<T> list = adj.get(v);
 			list.add(w);
 			adj.put(v, list);
 		} else {
-			LinkedList<String> list = new LinkedList<>();
+			LinkedList<T> list = new LinkedList<>();
 			list.add(w);
 			adj.put(v, list);
 		}
 	}
 
 	// prints BFS traversal from a given source s
-	public void BFS(String s) {
+	public void BFS(T s) {
 		// Mark all the vertices as not visited(By default
 		// set as false)
-		HashMap<String, Boolean> visited = new HashMap<>();
+		HashMap<T, Boolean> visited = new HashMap<>();
 
 		// Create a queue for BFS
-		LinkedList<String> queue = new LinkedList<String>();
+		LinkedList<T> queue = new LinkedList<>();
 
 		// Mark the current node as visited and enqueue it
 		visited.put(s, true);
@@ -55,9 +55,9 @@ public class GraphBFSHashMap {
 			// If a adjacent has not been visited, then mark it
 			// visited and enqueue it
 			if (adj.containsKey(s)) {
-				Iterator<String> i = adj.get(s).listIterator();
+				Iterator<T> i = adj.get(s).listIterator();
 				while (i.hasNext()) {
-					String n = i.next();
+					T n = i.next();
 					if (null == visited.get(n) || !visited.get(n)) {
 						visited.put(n, true);
 						queue.add(n);
