@@ -12,7 +12,7 @@ import java.util.LinkedList;
  */
 public class DepthFirstSearchGraph {
 	private int V; // No. of vertices
-	private LinkedList<Integer> adj[]; // Adjacency Lists
+	private LinkedList<Integer>[] adj; // Adjacency Lists
 
 	// Constructor
 	public DepthFirstSearchGraph(int v) {

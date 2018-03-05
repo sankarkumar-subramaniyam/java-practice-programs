@@ -7,7 +7,10 @@ package algorithm.graph;
  * @author Sankar
  *
  */
-public class BreadthFirstSearchGraph {
+public class BreadthFirstSearchGraph<T> {
+	
+	private T vertex;
+	
 
 	/**
 	 * @param args

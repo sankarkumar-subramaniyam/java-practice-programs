@@ -88,6 +88,26 @@ public class Matrix2D {
 
 		return false;
 	}
+	
+	public static void rotate2DMatrixImage90D(int[][] matrix) {
+		int length = matrix.length;
+
+		// maxIndex
+		int k = length - 1;
+
+		for (int i = 0; i < length / 2; i++) {
+			for (int j = 0; j < Math.ceil(((double) length) / 2); j++) {
+				int temp = matrix[i][j];
+				matrix[i][j] = matrix[k - j][i];
+				matrix[k - j][i] = matrix[k - i][k - j];
+				matrix[k - i][k - j] = matrix[j][k - i];
+				matrix[j][k - i] = temp;
+			}
+		}
+
+		System.out.println("------- rotate2DMatrixImage --------");
+		printMatrix2D(matrix);
+	}
 
 	/**
 	 * @param args
@@ -138,6 +158,17 @@ public class Matrix2D {
 
 		printMatrix2D(matrix2dSpacialSorted);
 		System.out.println("findInSpacialSortedMatrix2D : Found 30 ? " + findInSpacialSortedMatrix2D(matrix2dSpacialSorted, findTarget+1));
+		
+		
+		int[][] matrix2DMandN = new int[10][10];
+		for (int i = 0; i < matrix2DMandN.length; i++)
+			for (int j = 0; j < matrix2DMandN[0].length; j++)
+				matrix2DMandN[i][j] = i;
+
+		System.out.println("------- matrix2DMandN --------");
+		printMatrix2D(matrix2DMandN);
+		
+		rotate2DMatrixImage90D(matrix2DMandN);
 	}
 
 }
