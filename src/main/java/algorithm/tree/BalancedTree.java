@@ -9,9 +9,7 @@ package algorithm.tree;
  */
 public class BalancedTree {
 	
-	class Node<T>{
-		
-	}
+
 
 	/**
 	 * @param args
