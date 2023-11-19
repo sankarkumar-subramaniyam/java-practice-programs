@@ -3,8 +3,6 @@
  */
 package datastruct;
 
-import java.util.LinkedList;
-
 /**
  * @author Sankar
  *
@@ -34,10 +32,28 @@ public class QueueUsingArray<T> {
 		return holder[head];
 	}
 
-	private T poll() {
-		T retrunValue = holder[head];
-		holder[head] = null;
-		return retrunValue;
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		QueueUsingArray<String> queue = new QueueUsingArray<>(5);
+		queue.offer("A");
+		queue.offer("B");
+		queue.offer("C");
+		queue.offer("D");
+		queue.offer("E");
+
+		queue.printQueue();
+
+		System.out.println("Peek := " + queue.peek());
+		System.out.println("Poll := " + queue.poll());
+		System.out.println("Poll := " + queue.poll());
+		System.out.println("Poll := " + queue.poll());
+		System.out.println("Poll := " + queue.poll());
+		System.out.println("Poll := " + queue.poll());
+
+		queue.printQueue();
+
 	}
 
 	private void printQueue() {
@@ -48,23 +64,15 @@ public class QueueUsingArray<T> {
 		System.out.println("\n -----------------");
 	}
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		QueueUsingArray<String> queue = new QueueUsingArray<>(5);
-		queue.offer("A");
-		queue.offer("B");
-		queue.offer("C");
-		queue.offer("D");
-
-		queue.printQueue();
-
-		System.out.println("Peek := " + queue.peek());
-		System.out.println("Poll := " + queue.poll());
-
-		queue.printQueue();
-
+	private T poll() {
+		if (head < size) {
+			T retrunValue = holder[head];
+			holder[head] = null;
+			head++;
+			return retrunValue;
+		} else {
+			return null;
+		}
 	}
 
 }

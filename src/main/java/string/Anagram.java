@@ -47,7 +47,6 @@ public class Anagram {
 			i++;
 			j--;
 		}
-
 		return true;
 	}
 

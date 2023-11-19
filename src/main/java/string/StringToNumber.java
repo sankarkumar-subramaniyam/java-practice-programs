@@ -10,10 +10,14 @@ package string;
 public class StringToNumber {
 
 	public static int atoi(String str) {
-		if (str == null || str.length() < 1)
+		if (str == null)
 			return 0;
+
 		// trim white spaces
 		str = str.trim();
+		if (str.length() < 1)
+			return 0;
+
 		char flag = '+';
 		// check negative or positive
 		int i = 0;
@@ -27,7 +31,8 @@ public class StringToNumber {
 		double result = 0;
 		// calculate value
 		while (str.length() > i && str.charAt(i) >= '0' && str.charAt(i) <= '9') {
-			result = result * 10 + (str.charAt(i) - '0');
+			result = (result * 10) + (str.charAt(i) - '0');
+			System.out.println(result);
 			i++;
 		}
 		if (flag == '-')

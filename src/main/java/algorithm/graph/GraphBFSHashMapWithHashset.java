@@ -2,24 +2,27 @@ package algorithm.graph;
 
 //Java program to print BFS traversal from a given source vertex.
 //BFS(int s) traverses vertices reachable from s.
-import java.io.*;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 //This class represents a directed graph using adjacency list
 //representation
 public class GraphBFSHashMapWithHashset {
-	private int V; // No. of vertices
-	private HashMap<String, LinkedList<String>> adj = new HashMap<>(); // Adjacency Lists
+    private final int V; // No. of vertices
+    private final HashMap<String, LinkedList<String>> adj = new HashMap<>(); // Adjacency Lists
 
-	// Constructor
-	public GraphBFSHashMapWithHashset(int v) {
-		V = v;
-		// adj = new LinkedList[v];
-		// for (int i = 0; i < v; ++i)
-		// adj[i] = new LinkedList();
-	}
+    // Constructor
+    public GraphBFSHashMapWithHashset(int v) {
+        V = v;
+        // adj = new LinkedList[v];
+        // for (int i = 0; i < v; ++i)
+        // adj[i] = new LinkedList();
+    }
 
-	// Function to add an edge into the graph
+    // Function to add an edge into the graph
 	public void addEdge(String v, String w) {
 		// adj[v].add(w);
 		if (adj.containsKey(v)) {
@@ -79,22 +82,22 @@ public class GraphBFSHashMapWithHashset {
 		return false;
 	}
 
-	// Driver method to
-	public static void main(String args[]) {
-		GraphBFSHashMapWithHashset g = new GraphBFSHashMapWithHashset(4);
+    // Driver method to
+    public static void main(String[] args) {
+        GraphBFSHashMapWithHashset g = new GraphBFSHashMapWithHashset(4);
 
-		g.addEdge("0", "1");
-		g.addEdge("0", "2");
-		g.addEdge("1", "2");
-		g.addEdge("2", "0");
+        g.addEdge("0", "1");
+        g.addEdge("0", "2");
+        g.addEdge("1", "2");
+        g.addEdge("2", "0");
 //		g.addEdge("2", "3");
-		// g.addEdge("3", "3");
+        // g.addEdge("3", "3");
 
-		System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
+        System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
+        g.BFS("2");
 
-		g.BFS("2");
-
-		 System.out.println("\n Search : "+g.search("3"));
-	}
+        System.out.println("\n Search for 2 ?: " + g.search("2"));
+        System.out.println("\n Search for 3 ?: " + g.search("3"));
+    }
 }
 // This code is contributed by Aakash Hasija

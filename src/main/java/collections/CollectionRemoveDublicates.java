@@ -3,12 +3,11 @@
  */
 package collections;
 
-import java.util.Set;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * @author Sankar
@@ -44,26 +43,30 @@ public class CollectionRemoveDublicates {
 	}
 	
 	public static void intersection(int[] num1,int[] num2) {
-		
+
 		HashSet<Integer> setA = Arrays.stream(num1).boxed().collect(Collectors.toCollection(HashSet<Integer>::new));
 		HashSet<Integer> setB = Arrays.stream(num2).boxed().collect(Collectors.toCollection(HashSet<Integer>::new));
-		
+
 		HashSet<Integer> setAandB = new HashSet<Integer>();
 		setAandB.addAll(setA);
+		System.out.println(setAandB);
 		setAandB.addAll(setB);
-		
+		System.out.println(setAandB);
+
 		HashSet<Integer> setUnion = new HashSet<Integer>();
 		setUnion.addAll(setA);
-		
+
 		// Only A
-		setA.removeAll(setB); 
+		setA.removeAll(setB);
 		// Only B
-		setB.removeAll(setUnion); 
-		
+		setB.removeAll(setUnion);
+
 		// intersection : A and B
 		setAandB.removeAll(setA);
-		setAandB.removeAll(setB); 
-		
+		System.out.println(setAandB);
+		setAandB.removeAll(setB);
+		System.out.println(setAandB);
+
 		// Union of A & B
 		setUnion.addAll(setB);
 

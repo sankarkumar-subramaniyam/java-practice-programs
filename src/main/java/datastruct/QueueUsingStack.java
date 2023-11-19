@@ -3,7 +3,7 @@
  */
 package datastruct;
 
-import java.util.*;
+import java.util.Stack;
 
 /**
  * @author Sankar
@@ -33,22 +33,6 @@ public class QueueUsingStack<T> {
 		return true;
 	}
 
-	private T poll() {
-		return value.pop();
-	}
-
-	private T peek() {
-		return value.peek();
-	}
-
-	private void printQueue() {
-		System.out.println("\n -----------------");
-		for (int index = value.size() - 1; index >= 0; index--) {
-			System.out.print(" " + value.elementAt(index) + " | ");
-		}
-		System.out.println("\n -----------------");
-	}
-
 	/**
 	 * @param args
 	 */
@@ -64,8 +48,28 @@ public class QueueUsingStack<T> {
 
 		System.out.println("Peek := " + queue.peek());
 		System.out.println("Poll := " + queue.poll());
+		System.out.println("Poll := " + queue.poll());
+		System.out.println("Poll := " + queue.poll());
+		System.out.println("Poll := " + queue.poll());
+		System.out.println("Poll := " + queue.poll());
 
 		queue.printQueue();
+	}
+
+	private T peek() {
+		return value.peek();
+	}
+
+	private void printQueue() {
+		System.out.println("\n -----------------");
+		for (int index = value.size() - 1; index >= 0; index--) {
+			System.out.print(" " + value.elementAt(index) + " | ");
+		}
+		System.out.println("\n -----------------");
+	}
+
+	private T poll() {
+		return value.empty() ? null : value.pop();
 	}
 
 }

@@ -31,21 +31,6 @@ public class StackUsingArray<T> {
 		return holder[head-1];
 	}
 
-	private T pop() {
-		T returnValue = holder[head-1];
-		holder[head-1] = null;
-		head--;
-		return returnValue;
-	}
-
-	private void printStack() {
-		System.out.println("\n -----------------");
-		for (T value : holder) {
-			System.out.print(" " + value + " | ");
-		}
-		System.out.println("\n -----------------");
-	}
-
 	/**
 	 * @param args
 	 */
@@ -60,8 +45,31 @@ public class StackUsingArray<T> {
 
 		System.out.println("Peek := " + stack.peek());
 		System.out.println("Pop := " + stack.pop());
+		System.out.println("Pop := " + stack.pop());
+		System.out.println("Pop := " + stack.pop());
+		System.out.println("Pop := " + stack.pop());
+		System.out.println("Pop := " + stack.pop());
 
 		stack.printStack();
+	}
+
+	private void printStack() {
+		System.out.println("\n -----------------");
+		for (T value : holder) {
+			System.out.print(" " + value + " | ");
+		}
+		System.out.println("\n -----------------");
+	}
+
+	private T pop() {
+		if (0 <= (head - 1)) {
+			T returnValue = holder[head - 1];
+			holder[head - 1] = null;
+			head--;
+			return returnValue;
+		} else {
+			return null;
+		}
 	}
 
 }

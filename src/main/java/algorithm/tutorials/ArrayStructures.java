@@ -2,23 +2,22 @@ package algorithm.tutorials;
 
 /**
  * http://www.newthinktank.com/2013/02/java-sort-algorithm/
- * 
- * @author Sankar
  *
+ * @author Sankar
  */
 public class ArrayStructures {
-	
-	private int[] theArray = new int[50];
-	
-	private int arraySize = 10;
-	
-	public void generateRandomArray(){
-		
-		for(int i = 0; i < arraySize; i++){
-			
-			theArray[i] = (int)(Math.random()*10)+10;
-			
-		}
+
+    private final int[] theArray = new int[50];
+
+    private int arraySize = 10;
+
+    public void generateRandomArray() {
+
+        for (int i = 0; i < arraySize; i++) {
+
+            theArray[i] = (int) (Math.random() * 10) + 10;
+
+        }
 		
 	}
 	
@@ -326,17 +325,17 @@ public void printHorzArray(int i, int j){
 		newArray.printHorzArray(-1,-1);
 		
 		 newArray.linearSearchForValue(10);
-		
-		// newArray.bubbleSort();
-		
-		// We must Sort first
-		
-		// newArray.binarySearchForValue(17);
-		
-		// newArray.selectionSort();
-		
-//		newArray.insertionSort();
-		
-	}
+
+        // newArray.bubbleSort();
+
+        // We must Sort first
+
+        // newArray.binarySearchForValue(17);
+
+        // newArray.selectionSort();
+
+        newArray.insertionSort();
+
+    }
 
 }

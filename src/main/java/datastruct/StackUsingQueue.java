@@ -69,18 +69,22 @@ public class StackUsingQueue<T> {
 	 */
 	public static void main(String[] args) {
 
-		StackUsingQueue<String> stack = new StackUsingQueue<>();
-		stack.push("A");
-		stack.push("B");
-		stack.push("C");
-		stack.push("D");
+        StackUsingQueue<String> stack = new StackUsingQueue<>();
+        stack.push("A");
+        stack.push("B");
+        stack.push("C");
+        stack.push("D");
 
-		stack.printStack();
+        stack.printStack();
 
-		System.out.println("Peek := " + stack.peek());
-		System.out.println("Pop := " + stack.pop());
+        System.out.println("Peek := " + stack.peek());
+        System.out.println("Pop := " + stack.pop());
+        System.out.println("Pop := " + stack.pop());
+        System.out.println("Pop := " + stack.pop());
+        System.out.println("Pop := " + stack.pop());
+        System.out.println("Pop := " + stack.pop());
 
-		stack.printStack();
-	}
+        stack.printStack();
+    }
 
 }
