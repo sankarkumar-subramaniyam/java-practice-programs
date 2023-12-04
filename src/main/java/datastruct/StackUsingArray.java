@@ -1,75 +1,73 @@
 /**
- * 
+ *
  */
 package datastruct;
 
 /**
  * @author Sankar
- *
  */
 public class StackUsingArray<T> {
 
-	int head = 0;
-	int size = 0;
-	T[] holder;
+    int head = 0;
+    int size = 0;
+    T[] holder;
 
-	public StackUsingArray(int capacity) {
-		holder = (T[]) new Object[capacity];
-		size = capacity;
-	}
+    public StackUsingArray(int capacity) {
+        holder = (T[]) new Object[capacity];
+        size = capacity;
+    }
 
-	private boolean push(T value) {
-		if (head <= size) {
-			holder[head] = value;
-			head++;
-			return true;
-		}
-		return false;
-	}
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        StackUsingArray<String> stack = new StackUsingArray<>(5);
+        stack.push("A");
+        stack.push("B");
+        stack.push("C");
+        stack.push("D");
 
-	private T peek() {
-		return holder[head-1];
-	}
+        stack.printStack();
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		StackUsingArray<String> stack = new StackUsingArray<>(5);
-		stack.push("A");
-		stack.push("B");
-		stack.push("C");
-		stack.push("D");
+        System.out.println("Peek := " + stack.peek());
+        System.out.println("Pop := " + stack.pop());
+        System.out.println("Pop := " + stack.pop());
+        System.out.println("Pop := " + stack.pop());
+        System.out.println("Pop := " + stack.pop());
+        System.out.println("Pop := " + stack.pop());
 
-		stack.printStack();
+        stack.printStack();
+    }
 
-		System.out.println("Peek := " + stack.peek());
-		System.out.println("Pop := " + stack.pop());
-		System.out.println("Pop := " + stack.pop());
-		System.out.println("Pop := " + stack.pop());
-		System.out.println("Pop := " + stack.pop());
-		System.out.println("Pop := " + stack.pop());
+    private boolean push(T value) {
+        if (head <= size) {
+            holder[head] = value;
+            head++;
+            return true;
+        }
+        return false;
+    }
 
-		stack.printStack();
-	}
+    private T peek() {
+        return holder[head - 1];
+    }
 
-	private void printStack() {
-		System.out.println("\n -----------------");
-		for (T value : holder) {
-			System.out.print(" " + value + " | ");
-		}
-		System.out.println("\n -----------------");
-	}
+    private void printStack() {
+        System.out.println("\n -----------------");
+        for (T value : holder) {
+            System.out.print(" " + value + " | ");
+        }
+        System.out.println("\n -----------------");
+    }
 
-	private T pop() {
-		if (0 <= (head - 1)) {
-			T returnValue = holder[head - 1];
-			holder[head - 1] = null;
-			head--;
-			return returnValue;
-		} else {
-			return null;
-		}
-	}
-
+    private T pop() {
+        if (0 <= (head - 1)) {
+            T returnValue = holder[head - 1];
+            holder[head - 1] = null;
+            head--;
+            return returnValue;
+        } else {
+            return null;
+        }
+    }
 }

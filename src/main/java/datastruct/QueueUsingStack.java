@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package datastruct;
 
@@ -11,65 +11,64 @@ import java.util.Stack;
  */
 public class QueueUsingStack<T> {
 
-	Stack<T> temp = new Stack<>();
-	Stack<T> value = new Stack<>();
+    Stack<T> temp = new Stack<>();
+    Stack<T> value = new Stack<>();
 
-	private boolean offer(T item) {
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
 
-		try {
-			while (!value.isEmpty()) {
-				temp.push(value.pop());
-			}
+        QueueUsingStack<String> queue = new QueueUsingStack<>();
+        queue.offer("A");
+        queue.offer("B");
+        queue.offer("C");
+        queue.offer("D");
 
-			value.push(item);
+        queue.printQueue();
 
-			while (!temp.isEmpty()) {
-				value.push(temp.pop());
-			}
-		} catch (Exception e) {
-			return false;
-		}
+        System.out.println("Peek := " + queue.peek());
+        System.out.println("Poll := " + queue.poll());
+        System.out.println("Poll := " + queue.poll());
+        System.out.println("Poll := " + queue.poll());
+        System.out.println("Poll := " + queue.poll());
+        System.out.println("Poll := " + queue.poll());
 
-		return true;
-	}
+        queue.printQueue();
+    }
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+    private boolean offer(T item) {
 
-		QueueUsingStack<String> queue = new QueueUsingStack<>();
-		queue.offer("A");
-		queue.offer("B");
-		queue.offer("C");
-		queue.offer("D");
+        try {
+            while (!value.isEmpty()) {
+                temp.push(value.pop());
+            }
 
-		queue.printQueue();
+            value.push(item);
 
-		System.out.println("Peek := " + queue.peek());
-		System.out.println("Poll := " + queue.poll());
-		System.out.println("Poll := " + queue.poll());
-		System.out.println("Poll := " + queue.poll());
-		System.out.println("Poll := " + queue.poll());
-		System.out.println("Poll := " + queue.poll());
+            while (!temp.isEmpty()) {
+                value.push(temp.pop());
+            }
+        } catch (Exception e) {
+            return false;
+        }
 
-		queue.printQueue();
-	}
+        return true;
+    }
 
-	private T peek() {
-		return value.peek();
-	}
+    private T peek() {
+        return value.peek();
+    }
 
-	private void printQueue() {
-		System.out.println("\n -----------------");
-		for (int index = value.size() - 1; index >= 0; index--) {
-			System.out.print(" " + value.elementAt(index) + " | ");
-		}
-		System.out.println("\n -----------------");
-	}
+    private void printQueue() {
+        System.out.println("\n -----------------");
+        for (int index = value.size() - 1; index >= 0; index--) {
+            System.out.print(" " + value.elementAt(index) + " | ");
+        }
+        System.out.println("\n -----------------");
+    }
 
-	private T poll() {
-		return value.empty() ? null : value.pop();
-	}
-
+    private T poll() {
+        return value.empty() ? null : value.pop();
+    }
 }

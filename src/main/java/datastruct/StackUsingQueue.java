@@ -3,7 +3,7 @@
  */
 package datastruct;
 
-import java.util.LinkedList;
+import java.util.*;
 
 /**
  * @author Sankar
@@ -68,6 +68,23 @@ public class StackUsingQueue<T> {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+
+        // basics --
+
+        Stack s = new Stack();
+        s.push(1);
+        s.pop();
+        s.peek();
+        Vector v = new Vector();
+        v.add(1);
+        v.remove(1);
+
+        Queue q = new ArrayDeque();
+        q.offer(1);
+        q.poll();
+        q.peek();
+
+
 
         StackUsingQueue<String> stack = new StackUsingQueue<>();
         stack.push("A");
