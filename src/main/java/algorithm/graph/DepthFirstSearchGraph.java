@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package algorithm.graph;
 
@@ -11,67 +11,67 @@ import java.util.LinkedList;
  *
  */
 public class DepthFirstSearchGraph {
-	private int V; // No. of vertices
-	private LinkedList<Integer>[] adj; // Adjacency Lists
+    private final int V; // No. of vertices
+    private final LinkedList<Integer>[] adj; // Adjacency Lists
 
-	// Constructor
-	public DepthFirstSearchGraph(int v) {
-		V = v;
-		adj = new LinkedList[v];
-		for (int i = 0; i < v; ++i)
-			adj[i] = new LinkedList();
-	}
+    // Constructor
+    public DepthFirstSearchGraph(int v) {
+        V = v;
+        adj = new LinkedList[v];
+        for (int i = 0; i < v; ++i)
+            adj[i] = new LinkedList();
+    }
 
-	// Function to add an edge into the graph
-	public void addEdge(int v, int w) {
-		adj[v].add(w);
-	}
+    // Driver method to
+    public static void main(String[] args) {
+        DepthFirstSearchGraph g = new DepthFirstSearchGraph(4);
 
-	// prints BFS traversal from a given source s
-	public void BFS(int s) {
-		// Mark all the vertices as not visited(By default
-		// set as false)
-		boolean visited[] = new boolean[V];
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 0);
+        g.addEdge(2, 3);
+        g.addEdge(3, 3);
 
-		// Create a queue for BFS
-		LinkedList<Integer> queue = new LinkedList<Integer>();
+        System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
 
-		// Mark the current node as visited and enqueue it
-		visited[s] = true;
-		queue.add(s);
+        g.BFS(2);
+    }
 
-		while (queue.size() != 0) {
-			// Dequeue a vertex from queue and print it
-			s = queue.poll();
-			System.out.print(s + " ");
+    // Function to add an edge into the graph
+    public void addEdge(int v, int w) {
+        adj[v].add(w);
+    }
 
-			// Get all adjacent vertices of the dequeued vertex s
-			// If a adjacent has not been visited, then mark it
-			// visited and enqueue it
-			Iterator<Integer> i = adj[s].listIterator();
-			while (i.hasNext()) {
-				int n = i.next();
-				if (!visited[n]) {
-					visited[n] = true;
-					queue.add(n);
-				}
-			}
-		}
-	}
+    // prints BFS traversal from a given source s
+    public void BFS(int s) {
+        // Mark all the vertices as not visited(By default
+        // set as false)
+        boolean[] visited = new boolean[V];
 
-	// Driver method to
-	public static void main(String args[]) {
-		DepthFirstSearchGraph g = new DepthFirstSearchGraph(4);
+        // Create a queue for BFS
+        LinkedList<Integer> queue = new LinkedList<Integer>();
 
-		g.addEdge(0, 1);
-		g.addEdge(0, 2);
-		g.addEdge(1, 2);
-		g.addEdge(2, 0);
-		g.addEdge(2, 3);
-		g.addEdge(3, 3); 
+        // Mark the current node as visited and enqueue it
+        visited[s] = true;
+        queue.add(s);
 
-		System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
+        while (queue.size() != 0) {
+            // Dequeue a vertex from queue and print it
+            s = queue.poll();
+            System.out.print(s + " ");
 
-		g.BFS(2);
-	}
+            // Get all adjacent vertices of the dequeued vertex s
+            // If a adjacent has not been visited, then mark it
+            // visited and enqueue it
+            Iterator<Integer> i = adj[s].listIterator();
+            while (i.hasNext()) {
+                int n = i.next();
+                if (!visited[n]) {
+                    visited[n] = true;
+                    queue.add(n);
+                }
+            }
+        }
+    }
 }

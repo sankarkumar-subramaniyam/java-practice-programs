@@ -10,6 +10,7 @@ public class ListOps {
 //        listOps.ArrayListOps();
 //        listOps.ArrayDequeOps();
         listOps.priorityQueueOps();
+
     }
 
     private void LinkedListOps() {
@@ -75,6 +76,8 @@ public class ListOps {
         System.out.println(al);
         System.out.println("at 3 : " + al.get(3));
         System.out.println("at 4 : " + al.get(4));
+
+//        al.re
     }
 
     private void ArrayDequeOps() {
@@ -107,6 +110,8 @@ public class ListOps {
         ad.poll();
         ad.poll();
         System.out.println(ad);
+
+
     }
 
     private void priorityQueueOps() {
@@ -119,14 +124,19 @@ public class ListOps {
         pq.offer(4);
         pq.offer(5);
         System.out.println(pq);
+        System.out.println("Size : " + pq.size());
         System.out.println("at front : " + pq.peek());
         System.out.println("at front : " + pq.peek());
+        System.out.println("Size : " + pq.size());
         System.out.println(pq.poll());
         System.out.println(pq.poll());
         System.out.println(pq.poll());
         System.out.println(pq.poll());
         System.out.println(pq);
+        System.out.println("Size : " + pq.size());
 
+        System.out.println("frequency of 5 : " + Collections.frequency(pq, 5));
+        System.out.println("frequency 0f 3 : " + Collections.frequency(pq, 3));
 
         // As Queue
         System.out.println(" As Queue reverseOrder ");

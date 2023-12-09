@@ -32,6 +32,8 @@ public class MovingAverage {
     public double next(int val) {
         nums.add(val);
         int sum = 0;
+
+        // it's a stream so only last window is needed
         for (int i = Math.max(0, (nums.size() - windowSize)); i < nums.size(); i++) {
             sum = sum + nums.get(i);
         }

@@ -3,28 +3,19 @@
  */
 package algorithm.graph;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * @author Sankar
- *
  */
 public class BreadthFirstSearchGraph {
 
-    public static List<Integer> reverseArray(List<Integer> a) {
-        // Write your code here
-        List<Integer> revArr = new ArrayList<>();
-        System.out.println("a: " + a + " ; a.size():" + a.size());
-        for (int i = a.size() - 1; i > 0; i--) {
-            System.out.println("i: " + i + " ; a.get(i):" + a.get(i));
-            revArr.add(i, a.get(i));
-        }
-        return revArr;
-
-    }
+    // G(V,E)
 
     public static void main(String[] arg) {
-        System.out.println("reverseArray: " + reverseArray(Arrays.asList(1, 4, 3, 2)));
 
 
         System.out.println("test graph");
@@ -68,20 +59,20 @@ public class BreadthFirstSearchGraph {
 
         myGraph.addEdges("30", "1");
 
-        //myGraph.printBF("1");
+        myGraph.printBF("1");
 
-        // System.out.println("================ DF =======================");
-        // myGraph.printDF("1");
+        System.out.println("================ DF =======================");
+        myGraph.printDF("1");
 
     }
 
     private static class Graph<T> {
-        private final HashMap<T, LinkedList<T>> edges = new HashMap<>();
+        private final HashMap<T, ArrayList<T>> edges = new HashMap<>();
         private T vertex;
 
         public boolean addEdges(T vertex, T edge) {
-            if (null == edges.get(vertex)) {
-                java.util.LinkedList<T> edgeList = new LinkedList<T>();
+            if (!edges.containsKey(vertex)) {
+                ArrayList<T> edgeList = new ArrayList<T>();
                 edgeList.add(edge);
                 edges.put(vertex, edgeList);
                 return true;
@@ -95,26 +86,24 @@ public class BreadthFirstSearchGraph {
             System.out.println("================" + edges + "================");
 
             HashSet<T> visited = new HashSet<>();
-            LinkedList<T> adjQueue = new LinkedList<>();
+            ArrayDeque<T> adjQueue = new ArrayDeque<>();
 
             visited.add(root);
-            adjQueue.push(root);
+            adjQueue.offer(root);
 
-            int l = 0;
+//            int l = 0;
             while (adjQueue.size() != 0) {
                 T vertex = adjQueue.poll();
                 // System.out.println((vertex.toString().startsWith("-------------------------------------- End Of Level :-")) ? "--- End Of Level :-"+l+"------" : "BF|--" + vertex.toString() + "--|");
                 System.out.println("BF|--" + vertex.toString() + "--|");
                 if (edges.containsKey(vertex)) {
                     //   System.out.println("|--*** edges (" + edges.get(vertex) + ")***--|");
-
                     edges.get(vertex).forEach(v -> {
                         if (!visited.contains(v)) {
-                            adjQueue.add(v);
+                            adjQueue.offer(v);
                             visited.add(v);
                         }
                     });
-
                     //  adjQueue.add((T) ("-------------------------------------- End Of Level :-"+l+"------"));
                     // l++;
                     // System.out.println("|--*** adjQueue (" + adjQueue + ")***--|");
@@ -125,7 +114,7 @@ public class BreadthFirstSearchGraph {
 
         public boolean printDF(T root) {
             HashSet<T> visited = new HashSet<>();
-            LinkedList<T> adj = new LinkedList<>();
+            ArrayDeque<T> adj = new ArrayDeque<>();
             adj.push(root);
 
             while (!adj.isEmpty()) {
@@ -137,7 +126,7 @@ public class BreadthFirstSearchGraph {
             return true;
         }
 
-        private HashSet<T> dfRecursion(T vertex, HashSet<T> visited, LinkedList<T> adj) {
+        private HashSet<T> dfRecursion(T vertex, HashSet<T> visited, ArrayDeque<T> adj) {
             if (edges.containsKey(vertex)) {
                 edges.get(vertex).forEach(v -> {
                     if (!visited.contains(v)) {

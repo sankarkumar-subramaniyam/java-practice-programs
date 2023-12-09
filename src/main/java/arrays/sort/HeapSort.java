@@ -1,14 +1,14 @@
 /**
  * 
  */
-package algorithm.sort;
+package arrays.sort;
 
 /**
  * @author Sankar
  *
  */
 public class HeapSort {
-	int arr[] = { 2, 7, 5, 6, 8, 1 };
+	int[] arr = { 2, 7, 5, 6, 8, 1 };
     int n = arr.length;
     
 	public void sort()
@@ -34,7 +34,7 @@ public class HeapSort {
  
     // To heapify a subtree rooted with node i which is
     // an index in arr[]. n is size of heap
-    void heapify(int arr[], int n, int i)
+    void heapify(int[] arr, int n, int i)
     {
         int largest = i;  // Initialize largest as root
         int l = 2*i + 1;  // left = 2*i + 1
@@ -62,7 +62,7 @@ public class HeapSort {
  
  
     // Driver program
-    public static void main(String args[])
+    public static void main(String[] args)
     {
  
         HeapSort heapSort = new HeapSort();

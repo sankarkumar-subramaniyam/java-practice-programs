@@ -63,8 +63,9 @@ public class Palindrome {
         return true;
     }
 
+
     public boolean isPalindromeWithSpecialChars(String s) {
-        char[] charsInS = s.toLowerCase().toCharArray();
+        char[] charsInS = s.toCharArray();
 
         int left = 0;
         int right = charsInS.length - 1;
@@ -88,13 +89,13 @@ public class Palindrome {
             if ((Character.isLetterOrDigit(leftChar))
                     &&
                     (Character.isLetterOrDigit(rightChar))) {
-                if (leftChar != rightChar)
+                if (Character.toLowerCase(leftChar) != Character.toLowerCase(rightChar))
                     return false;
             }
             // exit condition
             left++;
             right--;
         }
-		return true;
-	}
+        return true;
+    }
 }

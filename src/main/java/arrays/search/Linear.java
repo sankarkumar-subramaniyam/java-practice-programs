@@ -1,7 +1,7 @@
 /**
  *
  */
-package algorithm.search;
+package arrays.search;
 
 /**
  * @author Sankar
@@ -12,8 +12,10 @@ public class Linear {
         boolean isFound = false;
 
         for (int i = 0; i < inputArray.length; i++) {
-            if (find == inputArray[i])
+            if (find == inputArray[i]) {
                 isFound = true;
+                break;
+            }
         }
 
         return isFound;

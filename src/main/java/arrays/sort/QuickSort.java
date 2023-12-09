@@ -1,7 +1,7 @@
 /**
  * 
  */
-package algorithm.sort;
+package arrays.sort;
 
 /**
  * @author Sankar
@@ -9,7 +9,7 @@ package algorithm.sort;
  */
 public class QuickSort {
 
-	int arr[] = { 2, 7, 5, 6, 8, 1 };
+	int[] arr = { 2, 7, 5, 6, 8, 1 };
 
 	private void quickSort(int lowerindex, int higherindex) {
 

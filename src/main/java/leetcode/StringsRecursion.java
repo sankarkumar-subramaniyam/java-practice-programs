@@ -20,7 +20,57 @@ public class StringsRecursion {
 //        System.out.println("for hello: " + stringsRecursion.reverseVowels("hello"));
 
 
-        stringsRecursion.reverseWords("the sky is blue");
+//        stringsRecursion.reverseWords("the sky is blue");
+
+        System.out.println("for \"abc\",\"ahbgdc\" : " + stringsRecursion.isSubsequence("abc", "ahbgdc"));
+        System.out.println("for \"axc\",\"ahbgdc\" : " + stringsRecursion.isSubsequence("abc", "ahbgdc"));
+        System.out.println("for \"aaaaaa\",\"bbaaaa\" : " + stringsRecursion.isSubsequence("aaaaaa", "bbaaaa"));
+    }
+
+    public boolean isSubsequence(String s, String t) {
+        Integer leftBound = s.length(), rightBound = t.length();
+        Integer pLeft = 0, pRight = 0;
+
+        while (pLeft < leftBound && pRight < rightBound) {
+            // move both pointers or just the right pointer
+            if (s.charAt(pLeft) == t.charAt(pRight)) {
+                pLeft += 1;
+            }
+            pRight += 1;
+        }
+        return pLeft == leftBound;
+    }
+
+    public boolean isSubsequenceMineNotWorking(String s, String t) {
+        // Check is the length same or higher
+        // Check all the chars present of not
+        // Check the position is greater than
+
+        if (s.length() > t.length()) {
+            return false;
+        }
+
+        int[] sCharsInT = new int[s.length()];
+        char[] sChars = s.toCharArray();
+        char[] tChars = t.toCharArray();
+
+        for (int sIndex = 0; sIndex < sChars.length; sIndex++) { // O(s)
+            boolean isPresent = false;
+            for (int tIndex = sIndex; tIndex < tChars.length; tIndex++) { // O(t)
+                if (sChars[sIndex] == tChars[tIndex]) {
+                    isPresent = true;
+                    sCharsInT[sIndex] = tIndex;
+                    if (sIndex > 0 && sCharsInT[sIndex - 1] > tIndex) {
+                        return false;
+                    }
+                    break;
+                }
+            }
+            if (!isPresent) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public String gcdOfStrings(String str1, String str2) {

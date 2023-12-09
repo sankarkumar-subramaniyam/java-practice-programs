@@ -1,7 +1,7 @@
 /**
  * 
  */
-package algorithm.sort;
+package arrays.sort;
 
 /**
  * @author Sankar
@@ -9,7 +9,7 @@ package algorithm.sort;
  */
 public class BubbleSort {
 
-	int arr[] = { 2, 7, 5, 6, 8, 1 };
+	int[] arr = { 2, 7, 5, 6, 8, 1 };
 	int length = arr.length;
 
 	/**
@@ -34,7 +34,7 @@ public class BubbleSort {
 		}
 	}
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 
 		BubbleSort bubbleSort = new BubbleSort();
 		bubbleSort.sort();

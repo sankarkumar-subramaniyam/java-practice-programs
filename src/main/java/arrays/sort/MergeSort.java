@@ -1,17 +1,15 @@
 /**
  * 
  */
-package algorithm.sort;
-
-import java.util.Arrays;
+package arrays.sort;
 
 /**
  * @author Sankar
  *
  */
 public class MergeSort {
-	int arr[] = { 2, 7, 5, 6, 8, 1 };
-	int temp[] = new int[arr.length];
+	int[] arr = { 2, 7, 5, 6, 8, 1 };
+	int[] temp = new int[arr.length];
 
 	private void doMergeSort(int lowerIndex, int higherIndex) {
 		if (lowerIndex < higherIndex) {
@@ -31,10 +29,9 @@ public class MergeSort {
 
 	private void mergeParts(int lowerIndex, int middleIndex, int higherIndex) {
 //		System.out.println("mergeParts :== " + lowerIndex + "-" + middleIndex + "-" + higherIndex);
-		for (int i = lowerIndex; i <= higherIndex; i++) {
-			temp[i] = arr[i];
-//			System.out.print(temp[i] + " - ");
-		}
+        //			System.out.print(temp[i] + " - ");
+        if (higherIndex + 1 - lowerIndex >= 0)
+            System.arraycopy(arr, lowerIndex, temp, lowerIndex, higherIndex + 1 - lowerIndex);
 //		System.out.println();
 		
 		int i = lowerIndex;

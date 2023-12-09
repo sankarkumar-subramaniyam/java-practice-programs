@@ -9,6 +9,7 @@ public class LongestConsecutiveSequence {
 
     public int longestConsecutive(int[] nums) {
         HashMap<Integer, Pair<Integer, Integer>> mp = new HashMap<>();
+        // TODO: revisit this
         HashMap<Integer, Boolean> bl = new HashMap<>();
         int mx = 0;
 

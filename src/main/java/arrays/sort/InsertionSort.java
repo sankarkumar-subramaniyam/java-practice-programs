@@ -1,14 +1,14 @@
 /**
  * 
  */
-package algorithm.sort;
+package arrays.sort;
 
 /**
  * @author Sankar
  *
  */
 public class InsertionSort {
-	int arr[] = { 2, 7, 5, 6, 8, 1 };
+	int[] arr = { 2, 7, 5, 6, 8, 1 };
 	
 	private void sort() {
 		for (int i = 0; i < arr.length; i++) {

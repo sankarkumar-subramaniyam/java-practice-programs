@@ -5,4 +5,4 @@
  * @author Sankar
  *
  */
-package algorithm.search;
+package arrays.sort;

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 //https://leetcode.com/problems/moving-average-from-data-stream/
 //https://medium.com/root-node/moving-average-from-data-stream-774aefb72a2c
+// https://leetcode.com/problems/number-of-recent-calls/editorial/
 public class MovingAvgInStream {
 
     // initialize

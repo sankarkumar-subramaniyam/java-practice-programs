@@ -24,7 +24,7 @@ public class GroupAnagrams {
                 groupedAnagrams.get(key).add(strs[i]);
             } else {
                 ArrayList<String> values = new ArrayList<>();
-                values.add(String.valueOf(strs[i]));
+                values.add(strs[i]);
                 groupedAnagrams.put(key, values);
             }
         }

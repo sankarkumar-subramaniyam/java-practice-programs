@@ -1,6 +1,9 @@
 package arrays;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class ArraySums {
 
@@ -27,6 +30,23 @@ public class ArraySums {
         arraySums.printArray(arraySums.twoSumTwoPointers(new int[]{3, 2, 3}, 6));
         arraySums.printArray(arraySums.twoSumTwoPointers(new int[]{2, 3, 4}, 6));
         arraySums.printArray(arraySums.twoSumTwoPointers(new int[]{-1, 0}, -1));
+
+
+        System.out.println("reverseArray: " + reverseArray(Arrays.asList(1, 4, 3, 2)));
+
+    }
+
+    public static List<Integer> reverseArray(List<Integer> a) {
+        // Write your code here
+        List<Integer> revArr = new ArrayList<>();
+        System.out.println("a: " + a + " ; a.size():" + a.size());
+        for (int i = a.size() - 1; i > 0; i--) {
+            System.out.println("i: " + i + " ; a.get(i):" + a.get(i));
+            revArr.add(i, a.get(i));
+        }
+
+        return revArr;
+
     }
 
     //https://leetcode.com/problems/two-sum/solutions/3619262/3-method-s-c-java-python-beginner-friendly/
@@ -42,8 +62,12 @@ public class ArraySums {
         // Find the complement
         for (int i = 0; i < n; i++) {
             int complement = target - nums[i];
-            if (numMap.containsKey(complement) && numMap.get(complement) != i) {
-                return new int[]{i, numMap.get(complement)};
+            if (numMap.containsKey(complement)) {
+                if (numMap.get(complement) != i) {
+                    return new int[]{i, numMap.get(complement)};
+                } else {
+                    // TODO: Need to fix for same number as compliment
+                }
             }
         }
 

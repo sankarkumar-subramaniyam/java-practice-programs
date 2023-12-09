@@ -174,6 +174,9 @@ public class WeightedDirectedACyclicGraph {
 
         @Override
         public int compareTo(Object o) {
+            // Comparator.reverseOrder();
+//            String s = new String();
+//            s.compareTo("");
             Edge inEdge = (Edge) o;
             return Integer.compare(this.distance, inEdge.distance);
         }

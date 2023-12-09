@@ -5,4 +5,4 @@
  * @author Sankar
  *
  */
-package algorithm.sort;
+package tutorials;
